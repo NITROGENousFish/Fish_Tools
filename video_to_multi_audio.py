@@ -47,7 +47,7 @@ subprocess.call(['ffmpeg', '-i', raw_audio_path, '-f','segment','-segment_time',
 
 
 # upload to web
-# https://www.luyinzhushou.com/voice2text/
+# https://www.luyinzhushou.com/voice2text/   
 
 
 #

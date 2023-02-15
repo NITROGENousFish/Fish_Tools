@@ -20,7 +20,7 @@ if not os.path.exists(out_dir):
 
 # get tmp audio file
 raw_audio_path = os.path.join(out_dir, 'raw_audio.mp3')
-# subprocess.call(['ffmpeg', '-i', args.input, '-f','mp3','-vn', raw_audio_path])
+subprocess.call(['ffmpeg', '-i', args.input, '-f','mp3','-vn', raw_audio_path])
 
 # get audio time by ffprobe
 command = ['ffprobe', '-v', 'quiet', '-print_format', 'json', '-show_format','-show_streams', raw_audio_path]
@@ -42,7 +42,7 @@ def total_seconds_to_time_turation(s):
     
 
 D,_,_ = total_seconds_to_time_turation(total_seconds)
-# subprocess.call(['ffmpeg', '-i', raw_audio_path, '-f','segment','-segment_time',str(D),'-c','copy', os.path.join(out_dir, r'out%03d.mp3')])
+subprocess.call(['ffmpeg', '-i', raw_audio_path, '-f','segment','-segment_time',str(D),'-c','copy', os.path.join(out_dir, r'out%03d.mp3')])
 
 
 
